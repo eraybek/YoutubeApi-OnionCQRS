@@ -1,6 +1,7 @@
 using YoutubeApi.Persistence;
 using YoutubeApi.Application;
 using YoutubeApi.Mapper;
+using YoutubeApi.Application.Exceptions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,7 +12,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-//Ekledik...
+//Ekledik... ***
 var env = builder.Environment;
 builder.Configuration
     .SetBasePath(env.ContentRootPath)
@@ -21,7 +22,7 @@ builder.Configuration
 builder.Services.AddPersistence(builder.Configuration);
 builder.Services.AddApplication();
 builder.Services.AddCustomMapper();
-////
+//// ***
 
 
 var app = builder.Build();
@@ -32,6 +33,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+//Ekledik... ***
+app.ConfigureExceptionHandlingMiddleware();
+// ***
 
 app.UseAuthorization();
 
