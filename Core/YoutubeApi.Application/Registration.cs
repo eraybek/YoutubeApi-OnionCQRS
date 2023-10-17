@@ -1,12 +1,11 @@
 ﻿using FluentValidation;
-using Microsoft.Extensions.DependencyInjection;
-using System.Reflection;
-using YoutubeApi.Application.Exceptions;
-using System.Globalization;
 using MediatR;
-using YoutubeApi.Application.Behaviours;
-using YoutubeApi.Application.Features.Products.Rules;
+using Microsoft.Extensions.DependencyInjection;
+using System.Globalization;
+using System.Reflection;
 using YoutubeApi.Application.Bases;
+using YoutubeApi.Application.Behaviours;
+using YoutubeApi.Application.Exceptions;
 
 namespace YoutubeApi.Application
 {
